@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.CustomerMapper">
+	<resultMap type="com.vo.Customer" id="custMap">
+		<id column="cust_id" jdbcType="VARCHAR" property="custId"/>
+	 	<result column="cust_name" property="custId" jdbcType="VARCHAR"/>
+	 	<result column="password" property="custName" jdbcType="VARCHAR"/>
+	 	<result column="gender" property="passWord" jdbcType="VARCHAR"/>
+	 	<result column="orgId" property="gender" jdbcType="VARCHAR"/>
+	 	<result column="phone" property="phone" jdbcType="VARCHAR"/>
+	 	<result column="IDNumber" property="IDNumber" jdbcType="VARCHAR"/>
+	 	<result column="province" property="province" jdbcType="VARCHAR"/>
+	 	<result column="city" property="city" jdbcType="VARCHAR"/>
+	 	<result column="area" property="area" jdbcType="VARCHAR"/>
+	 	<result column="birthday" property="birthday" jdbcType="TIMESTAMP"/>
+	 	<result column="desc" property="desc" jdbcType="VARCHAR"/>
+	 	<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<select id="findById" resultMap="custMap">
+		select * from sys_customer where #{id,jdbcType=VARCHAR}
+	</select>
+</mapper>
